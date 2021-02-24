@@ -84,6 +84,20 @@ class _LoginState extends State<Login> {
 
               ]
             )),
+          ),
+          InkWell(
+            onTap: (){},
+            child: RichText(text: TextSpan(
+                text: 'don\'t have an account?  ',
+              style: TextStyle(color: Colors.black87),
+              children: [
+
+                TextSpan(
+                  text:"Sign in",style: TextStyle(color: Colors.blue)
+                )
+
+              ]
+            )),
           )
             ],
           )
