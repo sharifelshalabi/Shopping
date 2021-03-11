@@ -67,79 +67,109 @@ class _SettingsState extends State<Settings> {
                               MaterialTapTargetSize.shrinkWrap,
                           color: Colors.white,
                           onPressed: () {},
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(right: 10),
-                                child: Icon(Icons.language),
-                              ),
-                              Expanded(
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Text(
-                                        'Change Language',
-                                        style: TextStyle(fontSize: 17),
-                                      ),
-                                    ),
-                                    IconButton(
-                                      alignment: Alignment.centerRight,
-                                      onPressed: () {
-                                        iconLang = !iconLang;
-                                        visibilityLang
-                                            ? _changed(false, "Lang")
-                                            : _changed(true, "Lang");
-                                      },
-                                      icon: Icon(iconLang
-                                          ? Icons.keyboard_arrow_down
-                                          : Icons.keyboard_arrow_right),
-                                    ),
-                                  ],
+                          child: InkWell(
+                            onTap: () {
+                              iconLang = !iconLang;
+                              visibilityTheme
+                                  ? _changed(false, "Theme")
+                                  : _changed(true, "Theme");
+                            },
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(right: 10),
+                                  child: Icon(Icons.language),
                                 ),
-                              ),
-                            ],
+                                Expanded(
+                                  child: InkWell(
+                                    onTap: () {
+                                      iconLang = !iconLang;
+                                      visibilityLang
+                                          ? _changed(false, "Lang")
+                                          : _changed(true, "Lang");
+                                    },
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Text(
+                                            'Change Language',
+                                            style: TextStyle(fontSize: 17),
+                                          ),
+                                        ),
+                                        IconButton(
+                                          alignment: Alignment.centerRight,
+                                          onPressed: () {
+                                            iconLang = !iconLang;
+                                            visibilityLang
+                                                ? _changed(false, "Lang")
+                                                : _changed(true, "Lang");
+                                          },
+                                          icon: Icon(iconLang
+                                              ? Icons.keyboard_arrow_down
+                                              : Icons.keyboard_arrow_right),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         visibilityLang
                             ? Container(
-                          child: Column(
-                            children: [
-                              Divider(
-                                thickness: 1.5,
-                                height: 0,
-                              ),
-                              Column(
-                                children: [
-                                  Row(
-
-                                    children: [
-                                      SizedBox(
-                                        width: 20,
-                                      ),
-                                     CircleAvatar(backgroundImage:AssetImage("assets/download.png",),radius: 17,),
-                                      SizedBox(
-                                        width: 20,
-                                      ),
-                                      Text("data",style: kTextFlagStyle,),
-                                    ],
-                                  )
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FlatButton(onPressed: (){}, child: Text("Change"),splashColor: Colors.grey,),
-                                  FlatButton(onPressed: (){}, child: Text("Cancel"),splashColor: Colors.grey,),
-
-                                ],
-                              ),
-
-                            ],
-                          ),
-                        )
+                                child: Column(
+                                  children: [
+                                    Divider(
+                                      thickness: 1.5,
+                                      height: 0,
+                                    ),
+                                    Column(
+                                      children: [
+                                        Row(
+                                          children: [
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                            CircleAvatar(
+                                              backgroundImage: AssetImage(
+                                                "assets/download.png",
+                                              ),
+                                              radius: 17,
+                                            ),
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                            Text(
+                                              "data",
+                                              style: kTextFlagStyle,
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        FlatButton(
+                                          onPressed: () {},
+                                          child: Text("Change"),
+                                          splashColor: Colors.grey,
+                                        ),
+                                        FlatButton(
+                                          onPressed: () {},
+                                          child: Text("Cancel"),
+                                          splashColor: Colors.grey,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              )
                             : Container(),
                       ],
                     ),
@@ -156,40 +186,56 @@ class _SettingsState extends State<Settings> {
                               MaterialTapTargetSize.shrinkWrap,
                           color: Colors.white,
                           onPressed: () {},
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(right: 10),
-                                child: Icon(Icons.color_lens),
-                              ),
-                              Expanded(
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Text(
-                                        'Change Theme',
-                                        style: TextStyle(fontSize: 17),
-                                      ),
-                                    ),
-                                    IconButton(
-                                      alignment: Alignment.centerRight,
-                                      onPressed: () {
-                                        iconTheme = !iconTheme;
-                                        visibilityTheme
-                                            ? _changed(false, "Theme")
-                                            : _changed(true, "Theme");
-                                      },
-                                      icon: Icon(iconTheme
-                                          ? Icons.keyboard_arrow_down
-                                          : Icons.keyboard_arrow_right),
-                                    ),
-                                  ],
+                          child: InkWell(
+                            onTap: () {
+                              iconTheme = !iconTheme;
+                              visibilityTheme
+                                  ? _changed(false, "Theme")
+                                  : _changed(true, "Theme");
+                            },
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(right: 10),
+                                  child: Icon(Icons.color_lens),
                                 ),
-                              ),
-                            ],
+                                Expanded(
+                                  child: InkWell(
+                                    onTap: () {
+                                      iconTheme = !iconTheme;
+                                      visibilityTheme
+                                          ? _changed(false, "Theme")
+                                          : _changed(true, "Theme");
+                                    },
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Text(
+                                            'Change Theme',
+                                            style: TextStyle(fontSize: 17),
+                                          ),
+                                        ),
+                                        IconButton(
+                                          alignment: Alignment.centerRight,
+                                          onPressed: () {
+                                            iconTheme = !iconTheme;
+                                            visibilityTheme
+                                                ? _changed(false, "Theme")
+                                                : _changed(true, "Theme");
+                                          },
+                                          icon: Icon(iconTheme
+                                              ? Icons.keyboard_arrow_down
+                                              : Icons.keyboard_arrow_right),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         visibilityTheme
@@ -208,7 +254,8 @@ class _SettingsState extends State<Settings> {
                                         setSelectedRadioTile(val);
                                       },
                                       activeColor: Colors.grey,
-                                      selected: selectedRadioTile == 1 ? true : false,
+                                      selected:
+                                          selectedRadioTile == 1 ? true : false,
                                     ),
                                     RadioListTile(
                                       value: 2,
@@ -218,17 +265,25 @@ class _SettingsState extends State<Settings> {
                                         setSelectedRadioTile(val);
                                       },
                                       activeColor: Colors.black,
-                                      selected: selectedRadioTile == 2 ? true : false,
+                                      selected:
+                                          selectedRadioTile == 2 ? true : false,
                                     ),
                                     Row(
-                                       mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        FlatButton(onPressed: (){}, child: Text("Change"),splashColor: Colors.grey,),
-                                        FlatButton(onPressed: (){}, child: Text("Cancel"),splashColor: Colors.grey,),
-
+                                        FlatButton(
+                                          onPressed: () {},
+                                          child: Text("Change"),
+                                          splashColor: Colors.grey,
+                                        ),
+                                        FlatButton(
+                                          onPressed: () {},
+                                          child: Text("Cancel"),
+                                          splashColor: Colors.grey,
+                                        ),
                                       ],
                                     ),
-
                                   ],
                                 ),
                               )

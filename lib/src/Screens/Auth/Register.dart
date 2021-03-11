@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:thefinalproject/src/Screens/Auth/sign_in_screen.dart';
 class Signup extends StatefulWidget {
   @override
   _SignupState createState() => _SignupState();
@@ -25,8 +25,9 @@ class _SignupState extends State<Signup> {
                 height: h * 0.50,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/3.png"),
-                      fit: BoxFit.fill,),
+                    image: AssetImage("assets/3.png"),
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
               Align(
@@ -55,11 +56,14 @@ class _SignupState extends State<Signup> {
                           ),
                         ),
                         TextFormField(
-                          decoration: InputDecoration(hintText: 'Full name',focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xffff4d4d),
+                          decoration: InputDecoration(
+                            hintText: 'Full name',
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xffff4d4d),
+                              ),
                             ),
-                          ),),
+                          ),
                         ),
                         SizedBox(
                           height: h * 0.01,
@@ -80,8 +84,14 @@ class _SignupState extends State<Signup> {
                                   });
                                 },
                                 child: isSeen
-                                    ? Icon(Icons.remove_red_eye,color:  Color(0xffff4d4d),)
-                                    : Icon(Icons.visibility_off,color:  Color(0xffff4d4d),)),
+                                    ? Icon(
+                                        Icons.remove_red_eye,
+                                        color: Color(0xffff4d4d),
+                                      )
+                                    : Icon(
+                                        Icons.visibility_off,
+                                        color: Color(0xffff4d4d),
+                                      )),
                           ),
                         ),
                         SizedBox(
@@ -103,8 +113,14 @@ class _SignupState extends State<Signup> {
                                 });
                               },
                               child: isSeen2
-                                  ? Icon(Icons.remove_red_eye,color:  Color(0xffff4d4d),)
-                                  : Icon(Icons.visibility_off,color:  Color(0xffff4d4d),),
+                                  ? Icon(
+                                      Icons.remove_red_eye,
+                                      color: Color(0xffff4d4d),
+                                    )
+                                  : Icon(
+                                      Icons.visibility_off,
+                                      color: Color(0xffff4d4d),
+                                    ),
                             ),
                           ),
                         ),
@@ -114,12 +130,18 @@ class _SignupState extends State<Signup> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('already have an account?',
-                              style: TextStyle(color: Color(0xffff4d4d)),),
+                            Text(
+                              'already have an account?',
+                            ),
                             InkWell(
-                                child: Text('Sign in'),
+                                child: Text(
+                                  'Sign in',
+                                  style: TextStyle(color: Color(0xffff4d4d)),
+                                ),
                                 onTap: () {
-                                  print('');
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => SignInscreen(),
+                                  ));
                                 })
                           ],
                         )
@@ -127,14 +149,14 @@ class _SignupState extends State<Signup> {
                 ),
               ),
               Padding(
-                padding:  EdgeInsets.only(top: 40),
+                padding: EdgeInsets.only(top: 40),
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Container(
                     height: w * 0.15,
                     width: w * 0.15,
                     decoration: BoxDecoration(
-                      color: Color(0xff3f3d56),
+                      color: Colors.grey[500],
                       shape: BoxShape.circle,
                     ),
                     child: Icon(

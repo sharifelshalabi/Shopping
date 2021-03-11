@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'Forget_password.dart';
+import 'Register.dart';
 
 class SignInscreen extends StatefulWidget {
   @override
@@ -10,14 +12,8 @@ class _SignInscreenState extends State<SignInscreen> {
 
   @override
   Widget build(BuildContext context) {
-    var h = MediaQuery
-        .of(context)
-        .size
-        .height;
-    var w = MediaQuery
-        .of(context)
-        .size
-        .width;
+    var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -75,12 +71,14 @@ class _SignInscreenState extends State<SignInscreen> {
                                       color: Color(0xffff4d4d),
                                     ),
                                   ),
-
-                                  prefixIcon: Icon(Icons.person,color:  Color(0xffff4d4d),),
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Color(0xffff4d4d),
+                                  ),
                                   hintText: 'Name',
                                   enabledBorder: UnderlineInputBorder(
                                       borderSide:
-                                      BorderSide(color: Colors.grey[300]))),
+                                          BorderSide(color: Colors.grey[300]))),
                             ),
                             SizedBox(height: h * 0.03),
                             TextFormField(
@@ -92,7 +90,9 @@ class _SignInscreenState extends State<SignInscreen> {
                                   ),
                                 ),
                                 prefixIcon: Icon(
-                                    Icons.lock, color: Color(0xffff4d4d),),
+                                  Icons.lock,
+                                  color: Color(0xffff4d4d),
+                                ),
                                 hintText: 'Password',
                                 suffixIcon: InkWell(
                                   onTap: () {
@@ -101,8 +101,14 @@ class _SignInscreenState extends State<SignInscreen> {
                                     });
                                   },
                                   child: isSeen
-                                      ? Icon(Icons.visibility_off,color:  Color(0xffff4d4d),)
-                                      : Icon(Icons.remove_red_eye, color:  Color(0xffff4d4d),),
+                                      ? Icon(
+                                          Icons.visibility_off,
+                                          color: Color(0xffff4d4d),
+                                        )
+                                      : Icon(
+                                          Icons.remove_red_eye,
+                                          color: Color(0xffff4d4d),
+                                        ),
                                 ),
                               ),
                             ),
@@ -116,12 +122,25 @@ class _SignInscreenState extends State<SignInscreen> {
                                     style: TextStyle(color: Color(0xffff4d4d)),
                                   ),
                                   onTap: () {
-                                    print('siduhvsdkuj');
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (_) => ForgotPassword(),
+                                      ),
+                                    );
                                   },
                                 ),
                                 InkWell(
-                                  child: Text('Sign up',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-                                  onTap: () {},
+                                  child: Text(
+                                    'Sign up',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (_) => Signup()));
+                                  },
                                 )
                               ],
                             ),
@@ -136,9 +155,11 @@ class _SignInscreenState extends State<SignInscreen> {
                         width: w * 0.15,
                         decoration: BoxDecoration(
                             color: Color(0xffcccccc), shape: BoxShape.circle),
-                        child: Icon(
-                          Icons.arrow_forward_outlined,
-                          color: Colors.white,
+                        child: FlatButton(
+                          child: Icon(
+                            Icons.arrow_forward_outlined,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),

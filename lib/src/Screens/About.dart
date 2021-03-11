@@ -7,10 +7,10 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+        appBar: AppBar(backgroundColor: Color(0xffff4d4d),
           title: Text(
             "About",
-            style: kAppbarSizeText,
+            style: TextStyle(color: Colors.white),
           ),
         ),
         body: Column(
@@ -23,10 +23,10 @@ class About extends StatelessWidget {
                     padding:  EdgeInsets.all(15),
                     child: Row(
                       children: [
-                        CircleAvatar(backgroundColor: Colors.blue,radius: 30,),
+                        CircleAvatar(backgroundColor: Colors.redAccent,radius: 30,),
                         Padding(
                           padding: EdgeInsets.only(left: 10),
-                          child: Text("khraa",style: kCardTextStyle,),
+                          child: Text("User",style: kCardTextStyle,),
                         ),
                       ],
                     ),

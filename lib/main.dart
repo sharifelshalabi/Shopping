@@ -11,7 +11,7 @@ import 'package:thefinalproject/src/Screens/Settings/Settings.dart';
 import 'package:thefinalproject/src/Screens/Shop/Category.dart';
 import 'package:thefinalproject/src/Screens/splash_screen.dart';
 import 'package:flutter/services.dart';
-
+import 'Drawer.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Color(0xffff4d4d),
@@ -21,22 +21,22 @@ void main() {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
-  ]).then((val) {
-    runApp(Shop());
-  });
+  ]).then(
+    (val) {
+      runApp(Shop());
+    },
+  );
 }
 
 class Shop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
       routes: {
-        '/': (context) => Settings(),
-        '/second': (context) => Signup(),
-        '/third': (context) => PinCodeVerificationScreen('rfsber'),
+        '/': (context) => Products(),
       },
       debugShowCheckedModeBanner: false,
+
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
-
+import 'package:thefinalproject/Drawer.dart';
 
 class Products extends StatefulWidget {
   @override
@@ -37,7 +37,7 @@ class _ProductsState extends State<Products> with SingleTickerProviderStateMixin
           controller: tabController,
         ),
       ),
-      drawer: Drawer(),
+      drawer: SideBar(),
       body: TabBarView(
         controller: tabController,
         children: [
