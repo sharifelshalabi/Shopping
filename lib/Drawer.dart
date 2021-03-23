@@ -3,11 +3,13 @@ import 'package:thefinalproject/src/Screens/Auth/sign_in_screen.dart';
 import 'package:thefinalproject/src/Screens/Settings/Settings.dart';
 import 'package:thefinalproject/mylisttile.dart';
 import 'package:thefinalproject/src/Screens/About.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class SideBar extends StatefulWidget {
   @override
   _SideBarState createState() => _SideBarState();
 }
+//TODO convert stateful to statless
 
 class _SideBarState extends State<SideBar> {
   @override
@@ -27,7 +29,7 @@ class _SideBarState extends State<SideBar> {
                 decoration: BoxDecoration(
                     color: Colors.redAccent,
                     image: DecorationImage(
-                        image: AssetImage("assets/7.png"), fit: BoxFit.cover)),
+                        image: AssetImage("assets/photos/7.png"), fit: BoxFit.cover)),
               ),
               MyListTile(
                 myicon: IconButton(
@@ -37,7 +39,7 @@ class _SideBarState extends State<SideBar> {
 
                   ),
                 ),
-                text: 'Settings',
+                text: 'Settings'.tr().toString(),
                 onTap: () {
                   print("onclick");
                   Navigator.of(context).pushReplacement(
@@ -54,7 +56,7 @@ class _SideBarState extends State<SideBar> {
                     color: Colors.redAccent,
                   ),
                 ),
-                text: 'My Cart',
+                text: 'My Cart'.tr().toString(),
                 onTap: () {},
               ),
               MyListTile(
@@ -64,7 +66,7 @@ class _SideBarState extends State<SideBar> {
                     color: Colors.redAccent,
                   ),
                 ),
-                text: 'My Purchases',
+                text: 'My Purchases'.tr().toString(),
                 onTap: () {},
               ),
               MyListTile(
@@ -74,7 +76,7 @@ class _SideBarState extends State<SideBar> {
                     color: Colors.redAccent,
                   ),
                 ),
-                text: 'My Activities',
+                text: 'My Activities'.tr().toString(),
                 onTap: () {},
               ),
               GestureDetector(
@@ -85,7 +87,7 @@ class _SideBarState extends State<SideBar> {
                       color: Colors.redAccent,
                     ),
                   ),
-                  text: 'About',
+                  text: 'About'.tr().toString(),
 
                 ),
               ),
@@ -98,7 +100,7 @@ class _SideBarState extends State<SideBar> {
                       color: Colors.redAccent,
                     ),
                   ),
-                  text: 'Log Out',
+                  text: 'Log Out'.tr().toString(),
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(

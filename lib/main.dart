@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:thefinalproject/src/Screens/About.dart';
-import 'package:thefinalproject/src/Screens/Auth/Confirmation.dart';
-import 'package:thefinalproject/src/Screens/Auth/Forget_password.dart';
-import 'dart:async';
-import 'package:flutter/material.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:thefinalproject/src/Screens/Auth/Register.dart';
-import 'package:thefinalproject/src/Screens/Auth/sign_in_screen.dart';
-import 'package:thefinalproject/src/Screens/Settings/Settings.dart';
-import 'package:thefinalproject/src/Screens/Shop/Category.dart';
-import 'package:thefinalproject/src/Screens/splash_screen.dart';
+
 import 'package:flutter/services.dart';
 import 'Drawer.dart';
-void main() {
+import 'package:easy_localization/easy_localization.dart';
+void main()async{
+  // ...
+  // Needs to be called so that we can await for EasyLocalization.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await EasyLocalization.ensureInitialized();
+
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Color(0xffff4d4d),
     statusBarBrightness: Brightness.light,
@@ -23,7 +20,14 @@ void main() {
     DeviceOrientation.portraitDown,
   ]).then(
     (val) {
-      runApp(Shop());
+      runApp( EasyLocalization(
+          supportedLocales: [Locale('en', 'US'), Locale('ar', 'AR'), Locale('fr', 'FR'), Locale('es', 'ES')],
+          path: 'assets/translation', // <-- change the path of the translation files
+          fallbackLocale: Locale('en', 'US'),
+          saveLocale: true,
+          child: Shop()),
+      );
+
     },
   );
 }
@@ -32,8 +36,12 @@ class Shop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+
       routes: {
-        '/': (context) => Products(),
+        '/': (context) => SideBar(),
       },
       debugShowCheckedModeBanner: false,
 

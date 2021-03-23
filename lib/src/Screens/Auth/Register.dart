@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:thefinalproject/src/Screens/Auth/sign_in_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 class Signup extends StatefulWidget {
   @override
   _SignupState createState() => _SignupState();
@@ -25,7 +26,7 @@ class _SignupState extends State<Signup> {
                 height: h * 0.50,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("assets/3.png"),
+                    image: AssetImage("assets/photos/3.png"),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -47,7 +48,7 @@ class _SignupState extends State<Signup> {
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: h * 0.05),
                           child: Text(
-                            'Sign up',
+                            'sign up'.tr().toString(),
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 25,
@@ -57,7 +58,7 @@ class _SignupState extends State<Signup> {
                         ),
                         TextFormField(
                           decoration: InputDecoration(
-                            hintText: 'Full name',
+                            hintText: 'Full name'.tr().toString(),
                             focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0xffff4d4d),
@@ -76,7 +77,7 @@ class _SignupState extends State<Signup> {
                                 color: Color(0xffff4d4d),
                               ),
                             ),
-                            hintText: 'Enter Password',
+                            hintText: 'Enter Password'.tr().toString(),
                             suffixIcon: InkWell(
                                 onTap: () {
                                   setState(() {
@@ -105,7 +106,7 @@ class _SignupState extends State<Signup> {
                                 color: Color(0xffff4d4d),
                               ),
                             ),
-                            hintText: 'Confirm Password',
+                            hintText: 'confirm password'.tr().toString(),
                             suffixIcon: InkWell(
                               onTap: () {
                                 setState(() {
@@ -131,11 +132,11 @@ class _SignupState extends State<Signup> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'already have an account?',
+                              'already have an account?'.tr().toString(),
                             ),
                             InkWell(
                                 child: Text(
-                                  'Sign in',
+                                  'sign in'.tr().toString(),
                                   style: TextStyle(color: Color(0xffff4d4d)),
                                 ),
                                 onTap: () {

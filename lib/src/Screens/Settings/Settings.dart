@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:country_icons/country_icons.dart';
 import 'package:thefinalproject/constants.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:thefinalproject/src/Screens/splash_screen.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -17,6 +19,7 @@ class _SettingsState extends State<Settings> {
 
   @override
   void initState() {
+
     selectedRadioTile = 0;
     super.initState();
   }
@@ -31,9 +34,11 @@ class _SettingsState extends State<Settings> {
     setState(() {
       if (field == "Lang") {
         visibilityLang = visibility;
+        visibilityTheme = !visibility;
       }
       if (field == "Theme") {
         visibilityTheme = visibility;
+        visibilityLang = !visibility;
       }
     });
   }
@@ -64,7 +69,7 @@ class _SettingsState extends State<Settings> {
                       children: [
                         FlatButton(
                           materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
+                          MaterialTapTargetSize.shrinkWrap,
                           color: Colors.white,
                           onPressed: () {},
                           child: InkWell(
@@ -90,7 +95,7 @@ class _SettingsState extends State<Settings> {
                                     },
                                     child: Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                       children: [
                                         Align(
                                           alignment: Alignment.centerLeft,
@@ -121,69 +126,231 @@ class _SettingsState extends State<Settings> {
                         ),
                         visibilityLang
                             ? Container(
-                                child: Column(
-                                  children: [
-                                    Divider(
-                                      thickness: 1.5,
-                                      height: 0,
-                                    ),
-                                    Column(
-                                      children: [
-                                        Row(
-                                          children: [
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                "assets/download.png",
-                                              ),
-                                              radius: 17,
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            Text(
-                                              "data",
-                                              style: kTextFlagStyle,
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        FlatButton(
-                                          onPressed: () {},
-                                          child: Text("Change"),
-                                          splashColor: Colors.grey,
+                          child: Column(
+                            children: [
+                              Divider(
+                                thickness: 1.5,
+                                height: 0,
+                                endIndent: 30.0,
+                                indent: 30.0,
+                              ),
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                          "assets/photos/download.png",
                                         ),
-                                        FlatButton(
-                                          onPressed: () {},
-                                          child: Text("Cancel"),
-                                          splashColor: Colors.grey,
+                                        radius: 17,
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Text(
+                                        "العربية",
+                                        style: kTextFlagStyle,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.center,
+                                children: [
+                                  FlatButton(
+                                    onPressed: () {
+                                      context.locale = Locale("ar", "AR");
+                                      Navigator.push(context, MaterialPageRoute(
+                                          builder: (context) => Spalsh(),));
+                                    },
+                                    child: Text("Change"),
+                                    splashColor: Colors.grey,
+                                  ),
+                                  FlatButton(
+                                    onPressed: () {
+
+                                    },
+                                    child: Text("Cancel"),
+                                    splashColor: Colors.grey,
+                                  ),
+                                ],
+                              ),
+                              Divider(
+                                thickness: 1.5,
+                                height: 0,
+                                endIndent: 30.0,
+                                indent: 30.0,
+                              ),
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                          "assets/photos/british.png",
                                         ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              )
+                                        radius: 17,
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Text(
+                                        "English",
+                                        style: kTextFlagStyle,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.center,
+                                children: [
+                                  FlatButton(
+                                    onPressed: () {
+                                      context.locale = Locale("en", "EN");
+                                      Navigator.push(context, MaterialPageRoute(
+                                        builder: (context) => Spalsh(),));
+                                    },
+                                    child: Text("Change"),
+                                    splashColor: Colors.grey,
+                                  ),
+                                  FlatButton(
+                                    onPressed: () {
+
+                                    },
+                                    child: Text("Cancel"),
+                                    splashColor: Colors.grey,
+                                  ),
+                                ],
+                              ),Divider(
+                                thickness: 1.5,
+                                height: 0,
+                                endIndent: 30.0,
+                                indent: 30.0,
+                              ),
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                          "assets/photos/france.png",
+                                        ),
+                                        radius: 17,
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Text(
+                                        "français",
+                                        style: kTextFlagStyle,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.center,
+                                children: [
+                                  FlatButton(
+                                    onPressed: () {
+                                      context.locale = Locale("fr", "FR");
+                                      Navigator.push(context, MaterialPageRoute(
+                                        builder: (context) => Spalsh(),));
+                                    },
+                                    child: Text("Change"),
+                                    splashColor: Colors.grey,
+                                  ),
+                                  FlatButton(
+                                    onPressed: () {
+
+                                    },
+                                    child: Text("Cancel"),
+                                    splashColor: Colors.grey,
+                                  ),
+                                ],
+                              ),Divider(
+                                thickness: 1.5,
+                                height: 0,
+                                endIndent: 30.0,
+                                indent: 30.0,
+                              ),
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                          "assets/photos/spain.png",
+                                        ),
+                                        radius: 17,
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Text(
+                                        "Español",
+                                        style: kTextFlagStyle,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.center,
+                                children: [
+                                  FlatButton(
+                                    onPressed: () {
+                                      context.locale = Locale("es", "ES");
+                                      Navigator.push(context, MaterialPageRoute(
+                                        builder: (context) => Spalsh(),));
+                                    },
+                                    child: Text("Change"),
+                                    splashColor: Colors.grey,
+                                  ),
+                                  FlatButton(
+                                    onPressed: () {
+
+                                    },
+                                    child: Text("Cancel"),
+                                    splashColor: Colors.grey,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        )
                             : Container(),
+
                       ],
                     ),
                     Divider(
                       thickness: 1.5,
                       height: 0,
-                      endIndent: 30.0,
-                      indent: 30.0,
+
                     ),
                     Column(
                       children: [
                         FlatButton(
                           materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
+                          MaterialTapTargetSize.shrinkWrap,
                           color: Colors.white,
                           onPressed: () {},
                           child: InkWell(
@@ -209,7 +376,7 @@ class _SettingsState extends State<Settings> {
                                     },
                                     child: Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                       children: [
                                         Align(
                                           alignment: Alignment.centerLeft,
@@ -240,53 +407,53 @@ class _SettingsState extends State<Settings> {
                         ),
                         visibilityTheme
                             ? Container(
-                                child: Column(
-                                  children: [
-                                    Divider(
-                                      thickness: 1.5,
-                                      height: 0,
-                                    ),
-                                    RadioListTile(
-                                      value: 1,
-                                      groupValue: selectedRadioTile,
-                                      title: Text("Light"),
-                                      onChanged: (val) {
-                                        setSelectedRadioTile(val);
-                                      },
-                                      activeColor: Colors.grey,
-                                      selected:
-                                          selectedRadioTile == 1 ? true : false,
-                                    ),
-                                    RadioListTile(
-                                      value: 2,
-                                      groupValue: selectedRadioTile,
-                                      title: Text("Dark"),
-                                      onChanged: (val) {
-                                        setSelectedRadioTile(val);
-                                      },
-                                      activeColor: Colors.black,
-                                      selected:
-                                          selectedRadioTile == 2 ? true : false,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        FlatButton(
-                                          onPressed: () {},
-                                          child: Text("Change"),
-                                          splashColor: Colors.grey,
-                                        ),
-                                        FlatButton(
-                                          onPressed: () {},
-                                          child: Text("Cancel"),
-                                          splashColor: Colors.grey,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              )
+                          child: Column(
+                            children: [
+                              Divider(
+                                thickness: 1.5,
+                                height: 0,
+                              ),
+                              RadioListTile(
+                                value: 1,
+                                groupValue: selectedRadioTile,
+                                title: Text("Light"),
+                                onChanged: (val) {
+                                  setSelectedRadioTile(val);
+                                },
+                                activeColor: Colors.grey,
+                                selected:
+                                selectedRadioTile == 1 ? true : false,
+                              ),
+                              RadioListTile(
+                                value: 2,
+                                groupValue: selectedRadioTile,
+                                title: Text("Dark"),
+                                onChanged: (val) {
+                                  setSelectedRadioTile(val);
+                                },
+                                activeColor: Colors.black,
+                                selected:
+                                selectedRadioTile == 2 ? true : false,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.center,
+                                children: [
+                                  FlatButton(
+                                    onPressed: () {},
+                                    child: Text("Change"),
+                                    splashColor: Colors.grey,
+                                  ),
+                                  FlatButton(
+                                    onPressed: () {},
+                                    child: Text("Cancel"),
+                                    splashColor: Colors.grey,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        )
                             : Container(),
                       ],
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ForgotPassword extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       height: h * 0.55,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage("assets/4.png"),
+                            image: AssetImage("assets/photos/4.png"),
                             fit: BoxFit.cover),
                       ),
                     ),
@@ -49,7 +50,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: h * 0.02),
                               child: Text(
-                                'Forget Password',
+                                'forget password'.tr().toString(),
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 32,
@@ -68,7 +69,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   Icons.lock,
                                   color: Color(0xffff4d4d),
                                 ),
-                                hintText: 'New Password',
+                                hintText: 'New Password'.tr().toString(),
                                 suffixIcon: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -100,7 +101,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   Icons.lock,
                                   color: Color(0xffff4d4d),
                                 ),
-                                hintText: 'Confirm Password',
+                                hintText: 'confirm password'.tr().toString(),
                                 suffixIcon: InkWell(
                                   onTap: () {
                                     setState(() {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thefinalproject/src/Screens/Auth/sign_in_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Spalsh extends StatefulWidget {
   @override
@@ -17,7 +18,7 @@ class _SpalshState extends State<Spalsh> {
       ));
       //setState(() {});            why when i  comment both of those it still works
     });
-    //super.initState();
+    super.initState();
   }
 
   @override
@@ -48,11 +49,11 @@ class _SpalshState extends State<Spalsh> {
                   height: h * 0.15,
                   child: RichText(
                     text: TextSpan(
-                      text: "Welcome to Our App , ",
+                      text: "first".tr().toString(),
                       style: TextStyle(color: Colors.grey[600], fontSize: 20),
                       children: [
                         TextSpan(
-                            text: "Let's Shop",
+                            text: "second".tr().toString(),
                             style: TextStyle(color: Color(0xffff4d4d))),
                       ],
                     ),
@@ -61,7 +62,7 @@ class _SpalshState extends State<Spalsh> {
                 width: 240.0,
                 height: h * 0.3,
                 decoration: BoxDecoration(
-                    image: DecorationImage(image: AssetImage("assets/1.png"))),
+                    image: DecorationImage(image: AssetImage("assets/photos/1.png"))),
               ),
               SizedBox(
                 height: h * 0.2,

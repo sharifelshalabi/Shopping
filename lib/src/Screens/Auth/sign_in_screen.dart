@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Forget_password.dart';
 import 'Register.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class SignInscreen extends StatefulWidget {
   @override
@@ -29,7 +30,7 @@ class _SignInscreenState extends State<SignInscreen> {
                       height: h * 0.55,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage("assets/2.PNG"),
+                            image: AssetImage("assets/photos/2.PNG"),
                             fit: BoxFit.cover),
                       ),
                     ),
@@ -57,7 +58,7 @@ class _SignInscreenState extends State<SignInscreen> {
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: h * 0.05),
                               child: Text(
-                                'Sign in',
+                                'sign in'.tr().toString(),
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 32,
@@ -75,7 +76,7 @@ class _SignInscreenState extends State<SignInscreen> {
                                     Icons.person,
                                     color: Color(0xffff4d4d),
                                   ),
-                                  hintText: 'Name',
+                                  hintText: 'Name'.tr().toString(),
                                   enabledBorder: UnderlineInputBorder(
                                       borderSide:
                                           BorderSide(color: Colors.grey[300]))),
@@ -93,7 +94,7 @@ class _SignInscreenState extends State<SignInscreen> {
                                   Icons.lock,
                                   color: Color(0xffff4d4d),
                                 ),
-                                hintText: 'Password',
+                                hintText: 'password'.tr().toString(),
                                 suffixIcon: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -118,7 +119,7 @@ class _SignInscreenState extends State<SignInscreen> {
                               children: [
                                 InkWell(
                                   child: Text(
-                                    'Forgot Password?',
+                                    'forget password'.tr().toString(),
                                     style: TextStyle(color: Color(0xffff4d4d)),
                                   ),
                                   onTap: () {
@@ -131,8 +132,9 @@ class _SignInscreenState extends State<SignInscreen> {
                                 ),
                                 InkWell(
                                   child: Text(
-                                    'Sign up',
+                                    'sign up'.tr().toString(),
                                     style: TextStyle(
+
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold),
                                   ),

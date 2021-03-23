@@ -1,0 +1,21 @@
+{
+"first": "Bienvenue sur notre application",
+  "second": "Commencer à magasiner",
+  "sign up": "S'inscrire",
+  "Name":"Nom",
+  "password": "Mot de passe",
+  "sign in": "S'identifier",
+  "Enter Password": "Entrer le mot de passe",
+  "forget password": "Mot de passe oublié ?",
+  "New password": "nouveau mot de passe",
+  "confirm password": "Confirmez le mot de passe",
+  "Full name": "Nom complet",
+  "already have an account?": "Vous avez déjà un compte?",
+  "User": "Utilisateur",
+  "Settings": "Réglage",
+  "About": "À propos de",
+  "My Cart":"Mon panier",
+  "My Purchases": "Mes achats",
+  "My Activities": "Mes activités",
+  "Log Out": "Se déconnecter"
+}
