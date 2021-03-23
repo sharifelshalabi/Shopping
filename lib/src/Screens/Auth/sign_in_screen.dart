@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'Forget_password.dart';
+import 'Register.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-class ForgotPassword extends StatefulWidget {
+class SignInscreen extends StatefulWidget {
   @override
-  _ForgotPasswordState createState() => _ForgotPasswordState();
+  _SignInscreenState createState() => _SignInscreenState();
 }
 
-class _ForgotPasswordState extends State<ForgotPassword> {
+class _SignInscreenState extends State<SignInscreen> {
   bool isSeen = true;
-  bool isSeen2 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +30,15 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       height: h * 0.55,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage("assets/photos/4.png"),
+                            image: AssetImage("assets/photos/2.PNG"),
                             fit: BoxFit.cover),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: h * 0.09, left: w * 0.1),
+                      child: Text(
+                        'Welcome\n Back',
+                        style: TextStyle(fontSize: 35, color: Colors.black),
                       ),
                     ),
                     Align(
@@ -48,15 +56,32 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsets.symmetric(vertical: h * 0.02),
+                              padding: EdgeInsets.symmetric(vertical: h * 0.05),
                               child: Text(
-                                'forget password'.tr().toString(),
+                                'sign in'.tr().toString(),
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 32,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0xffff4d4d),
+                                    ),
+                                  ),
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Color(0xffff4d4d),
+                                  ),
+                                  hintText: 'Name'.tr().toString(),
+                                  enabledBorder: UnderlineInputBorder(
+                                      borderSide:
+                                          BorderSide(color: Colors.grey[300]))),
+                            ),
+                            SizedBox(height: h * 0.03),
                             TextFormField(
                               obscureText: isSeen,
                               decoration: InputDecoration(
@@ -69,7 +94,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   Icons.lock,
                                   color: Color(0xffff4d4d),
                                 ),
-                                hintText: 'New Password'.tr().toString(),
+                                hintText: 'password'.tr().toString(),
                                 suffixIcon: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -88,37 +113,38 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: h * 0.02),
-                            TextFormField(
-                              obscureText: isSeen2,
-                              decoration: InputDecoration(
-                                focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0xffff4d4d),
+                            SizedBox(height: h * 0.05),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InkWell(
+                                  child: Text(
+                                    'forget password'.tr().toString(),
+                                    style: TextStyle(color: Color(0xffff4d4d)),
                                   ),
-                                ),
-                                prefixIcon: Icon(
-                                  Icons.lock,
-                                  color: Color(0xffff4d4d),
-                                ),
-                                hintText: 'confirm password'.tr().toString(),
-                                suffixIcon: InkWell(
                                   onTap: () {
-                                    setState(() {
-                                      isSeen2 = !isSeen2;
-                                    });
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (_) => ForgotPassword(),
+                                      ),
+                                    );
                                   },
-                                  child: isSeen2
-                                      ? Icon(
-                                          Icons.visibility_off,
-                                          color: Color(0xffff4d4d),
-                                        )
-                                      : Icon(
-                                          Icons.remove_red_eye,
-                                          color: Color(0xffff4d4d),
-                                        ),
                                 ),
-                              ),
+                                InkWell(
+                                  child: Text(
+                                    'sign up'.tr().toString(),
+                                    style: TextStyle(
+
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (_) => Signup()));
+                                  },
+                                )
+                              ],
                             ),
                           ],
                         ),
@@ -131,9 +157,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         width: w * 0.15,
                         decoration: BoxDecoration(
                             color: Color(0xffcccccc), shape: BoxShape.circle),
-                        child: Icon(
-                          Icons.arrow_forward_outlined,
-                          color: Colors.white,
+                        child: FlatButton(
+                          child: Icon(
+                            Icons.arrow_forward_outlined,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),

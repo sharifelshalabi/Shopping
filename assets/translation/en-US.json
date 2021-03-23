@@ -1,0 +1,21 @@
+{
+"first": "welcome in our app",
+  "second": "Let's shop",
+  "sign up": "Sign Up",
+  "Name":"Name",
+  "password": "Password",
+  "sign in": "Sign in",
+  "Enter Password": "Enter Password",
+  "forget password": "Forgot Password ?",
+  "New password": "New Password",
+  "confirm password": "Confirm Password",
+  "Full name": "Full Name",
+  "already have an account?": "already have an account?",
+  "User": "User",
+  "Settings": "Setting",
+  "About": "About",
+  "My Cart":"My Cart",
+  "My Purchases": "My Purchases",
+  "My Activities": "My Activities",
+  "Log Out": "Log Out"
+}
