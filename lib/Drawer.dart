@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:thefinalproject/src/Screens/Auth/sign_in_screen.dart';
-import 'package:thefinalproject/src/Screens/Settings/Settings.dart';
-import 'package:thefinalproject/mylisttile.dart';
-import 'package:thefinalproject/src/Screens/About.dart';
+import 'package:thefinalproject/Custom_Widgets.dart';
 
 class SideBar extends StatefulWidget {
   @override
@@ -34,13 +30,11 @@ class _SideBarState extends State<SideBar> {
                   icon: Icon(
                     Icons.settings,
                     color: Colors.redAccent,
-
                   ),
                 ),
                 text: 'Settings',
                 onTap: () {
-                  print("onclick");
-                  Navigator.of(context).pushReplacement(
+                  Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => Settings(),
                     ),
@@ -77,17 +71,20 @@ class _SideBarState extends State<SideBar> {
                 text: 'My Activities',
                 onTap: () {},
               ),
-              GestureDetector(
-                child: MyListTile(
-                  myicon: IconButton(
-                    icon: Icon(
-                      Icons.info,
-                      color: Colors.redAccent,
-                    ),
+              MyListTile(
+                myicon: IconButton(
+                  icon: Icon(
+                    Icons.info,
+                    color: Colors.redAccent,
                   ),
-                  text: 'About',
-
                 ),
+                text: 'About',
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => About(),
+                  ));
+                },
+
               ),
               Padding(
                 padding: EdgeInsets.only(top: h * 0.19),

@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-
-class ForgotPassword extends StatefulWidget {
+import 'package:thefinalproject/Custom_Widgets.dart';
+class ChangePassword extends StatefulWidget {
   @override
-  _ForgotPasswordState createState() => _ForgotPasswordState();
+  _ChangePasswordState createState() => _ChangePasswordState();
 }
 
-class _ForgotPasswordState extends State<ForgotPassword> {
+class _ChangePasswordState extends State<ChangePassword> {
   bool isSeen = true;
   bool isSeen2 = true;
+  bool isSeen3 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       height: h * 0.55,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage("assets/4.png"),
+                            image: AssetImage("assets/111111111.png"),
                             fit: BoxFit.cover),
                       ),
                     ),
@@ -49,11 +49,42 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: h * 0.02),
                               child: Text(
-                                'Forget Password',
+                                'Change Password',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 32,
                                     fontWeight: FontWeight.bold),
+                              ),
+                            ),SizedBox(height: h*0.02,),
+                            TextFormField(
+                              obscureText: isSeen3,
+                              decoration: InputDecoration(
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0xffff4d4d),
+                                  ),
+                                ),
+                                prefixIcon: Icon(
+                                  Icons.lock,
+                                  color: Color(0xffff4d4d),
+                                ),
+                                hintText: 'Old Password',
+                                suffixIcon: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isSeen3 = !isSeen3;
+                                    });
+                                  },
+                                  child: isSeen3
+                                      ? Icon(
+                                    Icons.visibility_off,
+                                    color: Color(0xffff4d4d),
+                                  )
+                                      : Icon(
+                                    Icons.remove_red_eye,
+                                    color: Color(0xffff4d4d),
+                                  ),
+                                ),
                               ),
                             ),
                             TextFormField(
@@ -100,7 +131,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   Icons.lock,
                                   color: Color(0xffff4d4d),
                                 ),
-                                hintText: 'Confirm Password',
+                                hintText: 'Confirm New Password',
                                 suffixIcon: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -129,7 +160,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         height: w * 0.15,
                         width: w * 0.15,
                         decoration: BoxDecoration(
-                            color: Color(0xffcccccc), shape: BoxShape.circle),
+                            color: Color(0xffff4d4d), shape: BoxShape.circle),
                         child: Icon(
                           Icons.arrow_forward_outlined,
                           color: Colors.white,

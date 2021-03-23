@@ -1,13 +1,14 @@
-import 'package:flutter/material.dart';
 import 'package:thefinalproject/Custom_Widgets.dart';
 
-class SignInscreen extends StatefulWidget {
+class ForgotPassword extends StatefulWidget {
   @override
-  _SignInscreenState createState() => _SignInscreenState();
+  _ForgotPasswordState createState() => _ForgotPasswordState();
 }
 
-class _SignInscreenState extends State<SignInscreen> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   bool isSeen = true;
+  bool isSeen2 = true;
+  bool isSeen3 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +29,8 @@ class _SignInscreenState extends State<SignInscreen> {
                       height: h * 0.55,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage("assets/2.PNG"),
+                            image: AssetImage("assets/4.png"),
                             fit: BoxFit.cover),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: h * 0.09, left: w * 0.1),
-                      child: Text(
-                        'Welcome\n Back',
-                        style: TextStyle(fontSize: 35, color: Colors.black),
                       ),
                     ),
                     Align(
@@ -54,32 +48,46 @@ class _SignInscreenState extends State<SignInscreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsets.symmetric(vertical: h * 0.05),
+                              padding: EdgeInsets.symmetric(vertical: h * 0.02),
                               child: Text(
-                                'Sign in',
+                                'Change Password',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 32,
                                     fontWeight: FontWeight.bold),
                               ),
-                            ),
+                            ),SizedBox(height: h*0.02,),
                             TextFormField(
+                              obscureText: isSeen3,
                               decoration: InputDecoration(
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xffff4d4d),
-                                    ),
-                                  ),
-                                  prefixIcon: Icon(
-                                    Icons.person,
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
                                     color: Color(0xffff4d4d),
                                   ),
-                                  hintText: 'Name',
-                                  enabledBorder: UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.grey[300]))),
+                                ),
+                                prefixIcon: Icon(
+                                  Icons.lock,
+                                  color: Color(0xffff4d4d),
+                                ),
+                                hintText: 'Old Password',
+                                suffixIcon: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isSeen3 = !isSeen3;
+                                    });
+                                  },
+                                  child: isSeen3
+                                      ? Icon(
+                                    Icons.visibility_off,
+                                    color: Color(0xffff4d4d),
+                                  )
+                                      : Icon(
+                                    Icons.remove_red_eye,
+                                    color: Color(0xffff4d4d),
+                                  ),
+                                ),
+                              ),
                             ),
-                            SizedBox(height: h * 0.03),
                             TextFormField(
                               obscureText: isSeen,
                               decoration: InputDecoration(
@@ -92,7 +100,7 @@ class _SignInscreenState extends State<SignInscreen> {
                                   Icons.lock,
                                   color: Color(0xffff4d4d),
                                 ),
-                                hintText: 'Password',
+                                hintText: 'New Password',
                                 suffixIcon: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -101,47 +109,47 @@ class _SignInscreenState extends State<SignInscreen> {
                                   },
                                   child: isSeen
                                       ? Icon(
-                                          Icons.visibility_off,
-                                          color: Color(0xffff4d4d),
-                                        )
+                                    Icons.visibility_off,
+                                    color: Color(0xffff4d4d),
+                                  )
                                       : Icon(
-                                          Icons.remove_red_eye,
-                                          color: Color(0xffff4d4d),
-                                        ),
+                                    Icons.remove_red_eye,
+                                    color: Color(0xffff4d4d),
+                                  ),
                                 ),
                               ),
                             ),
-                            SizedBox(height: h * 0.05),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                InkWell(
-                                  child: Text(
-                                    'Forgot Password?',
-                                    style: TextStyle(color: Color(0xffff4d4d)),
+                            SizedBox(height: h * 0.02),
+                            TextFormField(
+                              obscureText: isSeen2,
+                              decoration: InputDecoration(
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0xffff4d4d),
                                   ),
-                                  onTap: () {
-                                    Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                        builder: (_) => ForgotPassword(),
-                                      ),
-                                    );
-                                  },
                                 ),
-                                InkWell(
-                                  child: Text(
-                                    'Sign up',
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
-                                  ),
+                                prefixIcon: Icon(
+                                  Icons.lock,
+                                  color: Color(0xffff4d4d),
+                                ),
+                                hintText: 'Confirm New Password',
+                                suffixIcon: InkWell(
                                   onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (_) => Signup()));
+                                    setState(() {
+                                      isSeen2 = !isSeen2;
+                                    });
                                   },
-                                )
-                              ],
+                                  child: isSeen2
+                                      ? Icon(
+                                    Icons.visibility_off,
+                                    color: Color(0xffff4d4d),
+                                  )
+                                      : Icon(
+                                    Icons.remove_red_eye,
+                                    color: Color(0xffff4d4d),
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -154,11 +162,9 @@ class _SignInscreenState extends State<SignInscreen> {
                         width: w * 0.15,
                         decoration: BoxDecoration(
                             color: Color(0xffcccccc), shape: BoxShape.circle),
-                        child: FlatButton(
-                          child: Icon(
-                            Icons.arrow_forward_outlined,
-                            color: Colors.white,
-                          ),
+                        child: Icon(
+                          Icons.arrow_forward_outlined,
+                          color: Colors.white,
                         ),
                       ),
                     ),

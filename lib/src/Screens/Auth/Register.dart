@@ -1,14 +1,12 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:thefinalproject/src/Screens/Auth/sign_in_screen.dart';
+import 'package:thefinalproject/Custom_Widgets.dart';
 class Signup extends StatefulWidget {
   @override
   _SignupState createState() => _SignupState();
 }
 
 class _SignupState extends State<Signup> {
-  bool isSeen = true;
-  bool isSeen2 = true;
+  bool isSeen = false;
+  bool isSeen2 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -85,11 +83,11 @@ class _SignupState extends State<Signup> {
                                 },
                                 child: isSeen
                                     ? Icon(
-                                        Icons.remove_red_eye,
+                                        Icons.visibility_off,
                                         color: Color(0xffff4d4d),
                                       )
                                     : Icon(
-                                        Icons.visibility_off,
+                                        Icons.remove_red_eye,
                                         color: Color(0xffff4d4d),
                                       )),
                           ),
@@ -114,11 +112,11 @@ class _SignupState extends State<Signup> {
                               },
                               child: isSeen2
                                   ? Icon(
-                                      Icons.remove_red_eye,
+                                      Icons.visibility_off,
                                       color: Color(0xffff4d4d),
                                     )
                                   : Icon(
-                                      Icons.visibility_off,
+                                      Icons.remove_red_eye,
                                       color: Color(0xffff4d4d),
                                     ),
                             ),

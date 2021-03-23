@@ -1,12 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:thefinalproject/src/Screens/Auth/sign_in_screen.dart';
-
-class Spalsh extends StatefulWidget {
+import 'package:thefinalproject/Custom_Widgets.dart';
+class Splash extends StatefulWidget {
   @override
-  _SpalshState createState() => _SpalshState();
+  _SplashState createState() => _SplashState();
 }
 
-class _SpalshState extends State<Spalsh> {
+class _SplashState extends State<Splash> {
   @override
   void initState() {
     // here to make the splash screen only show for specific amount of time
@@ -15,7 +13,6 @@ class _SpalshState extends State<Spalsh> {
       Navigator.of(context).push(MaterialPageRoute(
         builder: (_) => SignInscreen(),
       ));
-      //setState(() {});            why when i  comment both of those it still works
     });
     //super.initState();
   }
@@ -25,7 +22,7 @@ class _SpalshState extends State<Spalsh> {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.redAccent[50],
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -33,36 +30,48 @@ class _SpalshState extends State<Spalsh> {
               SizedBox(
                 height: h * 0.1,
               ),
+              // Container(
+              //   height: h * 0.1,
+              //   child: Text(
+              //     'E-Commerce\n',
+              //     style: TextStyle(
+              //         color: Color(0xffff4d4d),
+              //         fontSize: 35,
+              //         fontWeight: FontWeight.bold),
+              //   ),
+              //   alignment: Alignment.center,
+              // ),
               Container(
-                height: h * 0.1,
-                child: Text(
-                  'E-Commerce\n',
-                  style: TextStyle(
-                      color: Color(0xffff4d4d),
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold),
-                ),
-                alignment: Alignment.center,
-              ),
-              Container(
-                  height: h * 0.15,
-                  child: RichText(
-                    text: TextSpan(
-                      text: "Welcome to Our App , ",
-                      style: TextStyle(color: Colors.grey[600], fontSize: 20),
-                      children: [
-                        TextSpan(
-                            text: "Let's Shop",
-                            style: TextStyle(color: Color(0xffff4d4d))),
-                      ],
+                height: h * 0.25,
+                child: Column(
+                  children: [
+                    Text(
+                      "Welcome to Our App \n ",
+                      style: TextStyle(color: Colors.grey[600], fontSize: 25),
                     ),
-                  )),
-              Container(
-                width: 240.0,
-                height: h * 0.3,
-                decoration: BoxDecoration(
-                    image: DecorationImage(image: AssetImage("assets/1.png"))),
+                    Text(
+                      "Let's Shop",
+                      style: TextStyle(
+                        color: Color(0xffff4d4d),
+                        fontSize: 25,
+                      ),
+                    ),
+                  ],
+                ),
               ),
+              Card(
+                color: Colors.transparent,
+                child: CircleAvatar(
+                  backgroundImage: AssetImage("assets/Logo.png"),
+                  radius: 80,
+                ),
+              ),
+              // Container(
+              //   width: 240.0,
+              //   height: h * 0.3,
+              //   decoration: BoxDecoration(
+              //       image: DecorationImage(image: )),
+              // ),
               SizedBox(
                 height: h * 0.2,
               ),

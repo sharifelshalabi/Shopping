@@ -1,12 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:thefinalproject/Drawer.dart';
+import 'package:thefinalproject/Custom_Widgets.dart';
 
 class Products extends StatefulWidget {
   @override
   _ProductsState createState() => _ProductsState();
 }
-
 class _ProductsState extends State<Products> with SingleTickerProviderStateMixin{
   TabController tabController;
   @override
@@ -18,20 +15,21 @@ class _ProductsState extends State<Products> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.redAccent,
         title: Text('Products By Categories'),
         bottom: TabBar(
           tabs: [
             Tab(
-              text: 'gfnbfgb',
+              text: '1',
             ),
             Tab(
-              text: 'fg nfbg fb',
+              text: '2',
             ),
             Tab(
-              text: 'gb gdf',
+              text: '3',
             ),
             Tab(
-              text: 'dfbg',
+              text: '4',
             ),
           ],
           controller: tabController,
